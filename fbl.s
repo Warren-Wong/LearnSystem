@@ -1,4 +1,6 @@
 .code16
+.text
+_start:
 	cli
 	mov $0,%ax
 	mov %ax,%ds
@@ -19,8 +21,6 @@ lp:
 	. = 510
 
 	.word 0xaa55
-	
-	. = 1440*1024
 	
 
 	
