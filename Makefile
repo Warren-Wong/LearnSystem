@@ -1,7 +1,7 @@
 all:fbl.img Makefile.mak
 
 fbl.img:fbl.o print_str.o floppy.lds
-	ld -o fbl.img.elf -T floppy.lds fbl.o print_str.o
+	ld -o fbl.img.elf -T floppy.lds -I "./lib" fbl.o
 	objcopy -O binary fbl.img.elf fbl.img
 	
 %.o:%.S
