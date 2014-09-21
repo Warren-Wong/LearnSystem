@@ -4,4 +4,3 @@ SECTIONS {
 		fbl.o
 		}
 }
-

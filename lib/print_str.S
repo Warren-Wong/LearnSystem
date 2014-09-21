@@ -23,5 +23,4 @@ print_str_start:
 	jmp print_str_start
 print_str_ret:
 	ret
-	
-	. = 512
+

@@ -1,5 +1,7 @@
 .code16
-.text
+
+	jmp _start
+	.ascii "BOOT"
 _start:
 	cli
 	mov $0,%ax
@@ -13,15 +15,18 @@ _start:
 	movw $driver_number,%bx
 	movb %dl,(%bx)
 	
-	/* mov
-	mov $'a',%al
+	/* */
+	mov $'x',%al
 	mov	$0x0e,%ah
 	mov	$15,%bx
 	int	$0x10
 
 driver_number:	.byte	0
-	
-.include "print_str.S"
+
+	jmp _func
+	.ascii "FUNC"
+_func:
+.include "lib/print_str.S"
 	
 lp:
 	hlt
